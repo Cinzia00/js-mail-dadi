@@ -7,26 +7,28 @@ const email = ['paola@gmail.com', 'silvia@gmail.com', 'ciccio@live.it', 'gino@gm
 let emailUtente = prompt('Inserisci la tua mail');
 // console.log(emailUtente);
 
-//console.log(email, emailUtente)
 
-
-let controlloEmail = 0
+let controlloEmail = false
 console.log(controlloEmail)
 
 //Controllare se email utente è già presente 
 for (let i = 0; i < email.length; i++ ) {
     console.log(email[i]);
-
-    if (email[i] !== emailUtente){
-        console.log("non ho trovato la mail");
-    }else {
-        console.log('ho trovato la mail')
+    
+    if (email[i] === emailUtente){
+        controlloEmail = true
     }
     
 }
 
 // console.log("la mail è presente!");
-
+if (controlloEmail === true) {
+    console.log('Ho trovato la mail')
+    document.getElementById('email').innerHTML += 'Ho trovato la mail'
+}else {
+    console.log('Non ho trovato la mail')
+    document.getElementById('email').innerHTML += 'Non ho trovato la mail'
+}
 
 
 
@@ -42,6 +44,8 @@ console.log(numeroRandomUtente, numeroRandomPc)
 //Stabilire il vincitore in base al punteggio più alto
 
 let vincitore
+
+
 
 if (numeroRandomUtente < numeroRandomPc) {
     let vincitore = numeroRandomPc
